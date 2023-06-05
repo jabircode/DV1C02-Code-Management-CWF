@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js"></script>
+</head>
+
+<body class="contact-page">
+  <header>
+    <h1>Contact Me</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="achievements.html">Achievements</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Resume</h2>
+      <a href="resume.pdf" download>
+        <button>Download Resume</button>
+      </a>
+    </section>
+
+    <section>
+      <h2>Contact Information</h2>
+      <p>Feel free to reach out to me using the contact details below:</p>
+
+      <ul>
+        <li>Email: example@example.com</li>
+        <li>Phone: +123456789</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact Form</h2>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Your Name. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
