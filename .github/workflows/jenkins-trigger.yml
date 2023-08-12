@@ -12,4 +12,4 @@ jobs:
     steps:
     - name: Trigger Jenkins Job
       run: |
-        curl -X POST -u admin:11e52a0fc84728340db032186390cf5474 "http://YOUR_JENKINS_URL/job/YOUR_JOB_NAME/build" --data-urlencode json='{"parameter": [{"name":"PARAM_NAME", "value":"PARAM_VALUE"}]}'
+        curl -X POST -u admin:11e52a0fc84728340db032186390cf5474 "http://localhost:8080/job/DV1C02%20Code%20Management%20%20CWF/"
