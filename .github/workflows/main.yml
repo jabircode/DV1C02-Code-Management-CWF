@@ -30,7 +30,7 @@ jobs:
       - name: Run SonarCloud Analysis
         uses: sonarsource/sonarcloud-github-action@master
         with:
-          # organization: "jabircode" # Replace with your SonarCloud organization key
+          organization: "jabircode" # Replace with your SonarCloud organization key
           projectBaseDir: . #adjust accordingly
           args: >
               -Dsonar.projectKey=jabircode_DV1C02-Code-Management-CWF
