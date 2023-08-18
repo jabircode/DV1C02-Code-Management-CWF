@@ -1,7 +1,7 @@
-name: Testing Workflow
+name: nodejs Workflow
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,5 +16,5 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Run Tests with Mocha
-        run: npm test
+      - name: Build Project
+        run: npm run build

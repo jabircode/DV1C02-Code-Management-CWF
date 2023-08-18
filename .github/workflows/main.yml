@@ -13,11 +13,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Run Testing Workflow
-        uses: ./.github/workflows/test.yml
+      - name: mochajs Testing Workflow
+        uses: ./.github/workflows/mochajs.yml
 
-      - name: Run Build Workflow
-        uses: ./.github/workflows/build.yml
+      - name: SonarCloud Workflow
+        uses: ./.github/workflows/sonarcloud.yml
 
-      - name: Run Deployment Workflow
-        uses: ./.github/workflows/deploy.yml
+      - name: nodejs Workflow
+        uses: ./.github/workflows/nodejs.yml
+
+      - name: Netlify Deployment Workflow
+        uses: ./.github/workflows/netlify.yml
