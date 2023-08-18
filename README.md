@@ -1,5 +1,5 @@
 # DV1C02-Code-Management-CWF
-# live: https://64df4ec6a6083114ba12d305--dynamic-gumdrop-e41502.netlify.app
+# live: https:dynamic-gumdrop-e41502.netlify.app
 
 # CI/CD Pipeline
 
