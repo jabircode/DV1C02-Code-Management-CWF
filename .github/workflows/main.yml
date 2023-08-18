@@ -30,12 +30,13 @@ jobs:
       - name: Run SonarCloud Analysis
         uses: sonarsource/sonarcloud-github-action@master
         with:
-          organization: ${{ secrets.ORGANIZATION }} # Replace with your SonarCloud organization key
           projectBaseDir: . #adjust accordingly
           args: >
               -Dsonar.projectKey=jabircode_DV1C02-Code-Management-CWF
+              -Dsonar.organization=$SONAR_ORG
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_ORG: ${{ secrets.ORGANIZATION }} # Replace with your SonarCloud organization key
 
       - name: Build Project
         run: npm run build # Replace with your build command
