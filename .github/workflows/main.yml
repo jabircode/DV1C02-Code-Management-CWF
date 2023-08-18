@@ -31,7 +31,7 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           organization: "jabircode" # Replace with your SonarCloud organization key
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ SONAR_TOKEN }}
 
       - name: Build Project
         run: npm run build # Replace with your build command
@@ -40,4 +40,4 @@ jobs:
         uses: nwtgck/actions-netlify@v2
         with:
           publish-dir: ./build # Adjust to your build output directory
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_AUTH_TOKEN: ${{ NETLIFY_AUTH_TOKEN }}
