@@ -38,12 +38,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_ORG: ${{ secrets.ORGANIZATION }} # Replace with your SonarCloud organization key
 
-      - name: Build Project
-        run: npm run build # Replace with your build command
-
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         with:
-          publish-dir: ./build # Adjust to your build output directory
+          publish-dir: . # Adjust to your build output directory
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
