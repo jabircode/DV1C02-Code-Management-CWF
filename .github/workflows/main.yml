@@ -1,0 +1,23 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Run Testing Workflow
+        uses: ./.github/workflows/test.yml
+
+      - name: Run Build Workflow
+        uses: ./.github/workflows/build.yml
+
+      - name: Run Deployment Workflow
+        uses: ./.github/workflows/deploy.yml
