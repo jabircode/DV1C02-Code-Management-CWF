@@ -1,26 +1,67 @@
-name: Main Workflow
+# name: Main Workflow
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   run_workflow:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v2
+
+#       - name: mochajs Testing Workflow
+#         uses: ./.github/workflows/mochajs.yml
+
+#       - name: SonarCloud Workflow
+#         uses: ./.github/workflows/sonarcloud.yml
+
+#       - name: nodejs Workflow
+#         uses: ./.github/workflows/nodejs.yml
+
+#       - name: Netlify Deployment Workflow
+#         uses: ./.github/workflows/netlify.yml
+
+name: CI/CD Pipeline
 
 on:
   push:
     branches:
-      - main
+      - main # Change to your desired branch
 
 jobs:
-  run_workflow:
+  build_test_analyze_deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: mochajs Testing Workflow
-        uses: ./.github/workflows/mochajs.yml
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14 # Adjust to your desired Node.js version
 
-      - name: SonarCloud Workflow
-        uses: ./.github/workflows/sonarcloud.yml
+      - name: Install Dependencies
+        run: npm install
 
-      - name: nodejs Workflow
-        uses: ./.github/workflows/nodejs.yml
+      - name: Run Tests with Mocha
+        run: npm test # Adjust to your test command (Mocha)
 
-      - name: Netlify Deployment Workflow
-        uses: ./.github/workflows/netlify.yml
+      - name: Run SonarCloud Analysis
+        uses: sonarsource/sonarcloud-github-action@master
+        with:
+          organization: "your-organization" # Replace with your SonarCloud organization key
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Build Project
+        run: npm run build # Replace with your build command
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v2
+        with:
+          publish-dir: ./build # Adjust to your build output directory
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
