@@ -31,6 +31,9 @@ jobs:
         uses: sonarsource/sonarcloud-github-action@master
         with:
           organization: "jabircode" # Replace with your SonarCloud organization key
+          projectBaseDir: . #adjust accordingly
+          args: >
+              -Dsonar.projectKey=jabircode_DV1C02-Code-Management-CWF
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
