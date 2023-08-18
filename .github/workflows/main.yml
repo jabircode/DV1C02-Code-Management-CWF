@@ -1,30 +1,3 @@
-# name: Main Workflow
-
-# on:
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#   run_workflow:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - name: Checkout Repository
-#         uses: actions/checkout@v2
-
-#       - name: mochajs Testing Workflow
-#         uses: ./.github/workflows/mochajs.yml
-
-#       - name: SonarCloud Workflow
-#         uses: ./.github/workflows/sonarcloud.yml
-
-#       - name: nodejs Workflow
-#         uses: ./.github/workflows/nodejs.yml
-
-#       - name: Netlify Deployment Workflow
-#         uses: ./.github/workflows/netlify.yml
-
 name: CI/CD Pipeline
 
 on:
@@ -43,7 +16,7 @@ jobs:
       - name: Set Up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14 # Adjust to your desired Node.js version
+          node-version: 18 # Adjust to your desired Node.js version
 
       - name: Install Dependencies
         run: npm install
