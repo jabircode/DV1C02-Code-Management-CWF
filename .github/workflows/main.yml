@@ -30,7 +30,7 @@ jobs:
       - name: Run SonarCloud Analysis
         uses: sonarsource/sonarcloud-github-action@master
         with:
-          organization: "your-organization" # Replace with your SonarCloud organization key
+          organization: "jabircode" # Replace with your SonarCloud organization key
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Build Project
